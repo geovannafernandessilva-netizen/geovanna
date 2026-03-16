@@ -1,4 +1,4 @@
-/* Reset básico para evitar margens estranhas */
+/* Reset básico para limpar margens do navegador */
 * {
     margin: 0;
     padding: 0;
@@ -11,71 +11,79 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
 }
 
 h2 {
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-p {
-    color: #666;
-    font-size: 0.9rem;
     margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
 }
 
 .input-group {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
-label {
+.input-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #444;
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
 }
 
-input {
+.input-group input {
     width: 100%;
-    padding: 12px;
+    padding: 0.8rem;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 4px;
     outline: none;
     transition: border-color 0.3s;
 }
 
-input:focus {
+.input-group input:focus {
     border-color: #007bff;
 }
 
+/* Coloca telefone e data lado a lado em telas maiores */
 .row {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
 }
 
-.btn-enviar {
+.row .input-group {
+    flex: 1;
+}
+
+button {
     width: 100%;
-    padding: 14px;
+    padding: 1rem;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 1rem;
-    font-weight: bold;
     cursor: pointer;
+    font-weight: bold;
     transition: background 0.3s;
 }
 
-.btn-enviar:hover {
+button:hover {
     background-color: #0056b3;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
 }
